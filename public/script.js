@@ -71,6 +71,23 @@ let finalWinTimeNumeric = NaN;
 const backgroundMusic = document.getElementById('background-music');
 const battleMusic = document.getElementById('battle-music');
 
+function preloadAssets() {
+  const imagesToPreload = [
+    'images/Entrance.png',
+    'images/fireball.png',
+    'images/fight_scene_background.png',
+    'images/human.png',
+    'images/better_monster_eye.png'
+  ];
+
+  imagesToPreload.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', preloadAssets);
+
 if (backgroundMusic) {
   backgroundMusic.volume = 0.5;
   backgroundMusic.play().catch(error => {
