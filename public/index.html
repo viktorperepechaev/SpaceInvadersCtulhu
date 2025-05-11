@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Вторжение из Бездны</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+English+SC&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div id="splash-screen">
+         <div class="fade-vertical-wrapper">
+            <div class="fade-horizontal-wrapper">
+               <img src="images/Entrance.png" alt="Entrance Image">
+            </div>
+         </div>
+         <div id="splash-clickable-area"></div>
+      </div>
+      <div id="main-content-wrapper" class="hidden-by-default">
+      <header>
+         <h1>Вторжение из Бездны</h1>
+         <nav id="menu">
+            <button data-section-anchor="about-section">О Битве</button>
+            <button data-section-anchor="game-section">Сразиться</button>
+            <button data-section-anchor="results-section">Летописи</button>
+         </nav>
+      </header>
+      <main id="workspace">
+         <section id="about-section">
+            <h2>Напутствие той обречённой душе, что встретится с бездной</h2>
+            <p>Вы, защитник границы, находитесь в последнем ряду обороны. Бездна, наполненная нечистью, атакует ваши позиции. Ваша задача - отразить натиск нечисти, уничтожая его волны.</p>
+            <p>Оберегайте себя и невинный мир за вами от нечисти, перемещаясь и отстреливая волны наступающих кошмаров. Чем быстрее вы уничтожите нечисть, тем выше будет ваш счет в этой безнадежной борьбе.</p>
+            <p>Если вам удастся выжить и отразить достаточно угроз, вы сможете начертать свое имя в летописях тех, кто осмелился противостоять всепожирающей бездне.</p>
+            <p>Да не дрогнет ваш дух пред лицом невыразимого!</p>
+         </section>
+         <section id="game-section">
+            <h2>Вторжение из Бездны!</h2>
+            <button id="start-invaders-button">Пробудить Ужас!</button>
+            <div id="invaders-game-active-elements" class="hidden">
+               <h3 class="results">0</h3>
+               <p id="game-timer">Time: 0.0s</p>
+               <div class="grid"></div>
+               <div class="reload-bar-container">
+                  <div id="reload-bar-progress"></div>
+               </div>
+            </div>
+            <div id="invaders-win-dialog" class="hidden">
+               <h3>Вторжение Остановлено!</h3>
+               <p>Затраченное время: <span id="final-invaders-time">0.0s</span>.</p>
+               <label for="invader-player-name">Начертай свое имя, защитник:</label>
+               <input type="text" id="invader-player-name" maxlength="20" placeholder="Имя Стража Границы...">
+               <button id="save-invaders-score-button">Запечатать Подвиг</button>
+               <button id="play-again-from-win-button">Играть Снова?</button>
+            </div>
+         </section>
+         <section id="results-section">
+            <h2>Летопись Отмеченных</h2>
+            <div>
+               <label for="rows-count">Показать Стражей: </label>
+               <select id="rows-count">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+               </select>
+            </div>
+            <table id="highscore-table">
+               <thead>
+                  <tr>
+                     <th data-sort="rank">#</th>
+                     <th data-sort="name">Имя Стража</th>
+                     <th data-sort="score">Время (сек)</th>
+                     <th data-sort="date">Время Подвига</th>
+                  </tr>
+               </thead>
+               <tbody id="highscore-table-body">
+               </tbody>
+            </table>
+            <p id="loading-message">Летописи загружаются из бездны...</p>
+         </section>
+      </main>
+      <footer>
+         <p>© 2025 Перепечаев Виктор Б13-404. Итоговый проект во тьме веков.</p>
+      </footer>
+      <audio id="background-music" src="music/BackgroundMusic.mp3" loop></audio>
+      <audio id="battle-music" src="music/BattleMusic.mp3" loop></audio>
+      <script src="script.js" defer></script>
+   </body>
+</html>
